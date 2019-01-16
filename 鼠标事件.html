@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+        /*获取一个0到9的随机数*/
+        var i ;
+        var a ;
+        var b ;
+        var c ;
+        var d ;
+        var e;
+        var time;
+       function suiji(){
+       	/*每次调用函数前 先把上一个定时器清楚，再启动*/
+       	 clearInterval(time);
+       	 time = setInterval(function(){
+       	 	i = Math.round(Math.random()*9);
+         a = Math.round(Math.random()*9);
+         b = Math.round(Math.random()*9);
+         c = Math.round(Math.random()*9);
+         d = Math.round(Math.random()*9);
+         e = Math.round(Math.random()*9);
+         box.style.backgroundColor="#"+a+b+c+d+i+e;
+       	 },1000)
+         
+        }
+       
+		/*点击事件*/
+		box.onclick=function(){
+			/*元素.innerHTML 修改元素结构内容*/
+			box.innerHTML="<p>666</p>"
+			/*元素.innerHTML 修改元素文本内容*/
+			this.innerText="777";
+		}
+		box.ondblclick=function(){
+//			time = setInterval(function(){
+				suiji();
+//			},1000)
+			
+		}
+		
+		/*鼠标移出事件*/
+		box.onmouseout=function(){
+			clearInterval(time);
+		}
+		/*鼠标移入事件*/
+		box.onmouseover=function(){
+//			time.setInterval(function(){
+				suiji();
+//			},1000)
+		}
+	</script>
+</html>

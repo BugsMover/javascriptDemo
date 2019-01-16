@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<h1 class="txt">666</h1>
+		<p>777</p>
+	</body>
+	<script type="text/javascript">
+		/*通过ID查找元素 返回对象*/
+		var box = document.getElementById("box");
+	    /*通过类名查找元素 返回数组*/
+	   var txt = document.getElementsByClassName("txt")[0];
+	   /*通过标签名查找元素 返回数组*/
+	  var list = document.getElementsByTagName("p")[0];
+	  
+	  box.style.width=300+'px';
+	  box.style.height=300+'px';
+	  box.style.backgroundColor="chartreuse";
+	  
+	  txt.style.width=300+'px';
+	  txt.style.height=300+'px';
+	  txt.style.color="chartreuse";
+	  list.style.backgroundColor="chartreuse";
+	</script>
+</html>

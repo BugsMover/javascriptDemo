@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#boss{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.left{
+				transform: rotateY(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<img id="boss" src="img/timg (3).gif" />
+	</body>
+	<script type ="text/javascript">
+		var boss = document.getElementById("boss");
+		var numX=0;
+		var numY=0;
+		var flog = true;/*技能冷却开关*/
+		/*键盘监听事件*/
+		window.onkeydown=function(e){
+			console.log(e.keyCode);
+			switch(e.keyCode){
+				/*右走*/
+			case 39 :
+				numX+=5;
+				boss.style.left=numX+"px";
+				boss.className="";
+				break;
+				/*左走*/
+			case 37 :
+				numX-=5;
+				/*keyCode等于37的时候掉头*/
+				boss.className = "left";
+				boss.style.left = numX+"px";
+				break;
+				/*上走*/
+			case 38 :
+				numY-=5;
+				boss.style.top = numY+"px";
+				break;
+				/*下走*/
+			case 40 :
+				numY+=5;
+				boss.style.top= numY+"px";
+				break;
+				/*大招*/
+			case 32 :
+			    if(flog){
+				boss.src = "img/timg.gif";
+				setTimeout(function(){
+					boss.src="img/timg (3).gif";
+				},2100)
+				setTimeout(function(){
+					flog=true;
+				},4000)
+				}
+			    break;
+			}
+		}
+	</script>
+</html>

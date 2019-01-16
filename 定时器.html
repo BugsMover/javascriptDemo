@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var num=10;
+		/*常规定时器 不清楚 一直执行*/
+		var time = setInterval(function(){
+			num--;
+			if(num==0){
+				clearInterval(time);
+			}
+			document.write(num);
+		},1000)
+		
+		/*一次性定时器 启动一次就暂停*/
+		setTimeout(function(){
+			document.write("666");
+		},1000)
+	/*	clearTimeout 清楚一次性定时器*/
+	</script>
+</html>
